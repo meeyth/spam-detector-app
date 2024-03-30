@@ -24,6 +24,7 @@ This project consists of a message spam detector model built using NLTK and scik
 
 - **Libraries Used:**
   - React Native
+  - Native Wind
 
 - **User Interface:**
   - The React Native app provides a user-friendly interface for users to input messages.
