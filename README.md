@@ -6,11 +6,12 @@ This project consists of a message spam detector model built using NLTK and scik
 
 ### Python Backend
 
-- **Libraries Used:**
+- **Libraries Used (For Model building):**
   - NLTK
   - scikit-learn
   - NumPy
   - Pandas
+- **Library Used (For API building):**
   - Flask
 
 - **Message Spam Classifier Model:**
