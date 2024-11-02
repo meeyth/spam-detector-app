@@ -7,6 +7,15 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 
 
+from pymongo import MongoClient
+
+
+uri = "<connection string URI>"
+client = MongoClient(uri)
+project_db = client["project"]
+msg_col = project_db["message"]
+
+
 # Run the following line only once
 # nltk.download('punkt')
 
@@ -66,8 +75,15 @@ def predict():
 
         # 3. predicting
         prediction = model.predict(vector_input)[0]
+        
+        # 4. storing the message in database
 
-        return jsonify({"prediction": str(prediction)})
+        msg_col.insert_one({
+            "message": msg,
+            "is_spam": bool(prediction)
+        })
+
+        return jsonify({"prediction": bool(prediction)})
 
     return jsonify({"error": "Invalid request"})
 
