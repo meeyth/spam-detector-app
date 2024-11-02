@@ -13,6 +13,8 @@ This project consists of a message spam detector model built using NLTK and scik
   - Pandas
 - **Library Used (For API building):**
   - Flask
+- **Library Used (For Database):**
+  - Pymongo
 
 - **Message Spam Classifier Model:**
   - The model is trained on a dataset containing labeled messages as spam or ham.
